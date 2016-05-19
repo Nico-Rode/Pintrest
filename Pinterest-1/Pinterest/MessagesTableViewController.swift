@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Parse
 
 class MessagesTableViewController: UITableViewController {
     
     
     var arrayOfMessages = [messages(message: "Hey you still selling it?", recieved: false), messages(message: "Yeah man, it's all yours", recieved: true), messages(message: "Ok meet you there", recieved: false)]
+    
+    var testArray = [1,2,3,4,5]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,21 @@ class MessagesTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        var obj = PFObject(className: "Conversations")
+        obj.setObject(arrayOfMessages, forKey: "conversationContent")
+        obj.saveInBackgroundWithBlock({(success, error) in
+            if (error != nil)
+            {
+                print(error?.localizedDescription)
+            }
+            else
+            {
+                print("UPLOADED MESSAGES TO PARSE")
+            }
+        })
     }
 
     // MARK: - Table view data source

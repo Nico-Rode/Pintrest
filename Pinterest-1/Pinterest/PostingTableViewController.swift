@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class PostingTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // MARK: Properties
@@ -36,6 +37,12 @@ class PostingTableViewController: UITableViewController, UIPickerViewDataSource,
     let pickerData1 = ["Buying", "Selling"]
     let pickerData2 = ["Books", "Classifieds"]
     var itemData:Book = Book(title: "Title", description: "Description", price: "$", image: UIImage(named: "Default.jpg")!)
+    
+    override func viewDidAppear(animated: Bool) {
+        print("THE TITLE IS: ", itemTitle.text!)
+        print("THE DESCRIPTION IS: ", itemDescription.text)
+        print(pickerView.selectedRowInComponent(0), " and ", pickerView.selectedRowInComponent(1))
+    }
     
     
     override func viewDidLoad() {
@@ -87,6 +94,63 @@ class PostingTableViewController: UITableViewController, UIPickerViewDataSource,
             return pickerData2[row]
         }
     }
+    
+//    @IBAction func update(sender: AnyObject) {
+//        let obj = PFObject(className: "Book")
+//        obj.setObject(itemPrice.text!, forKey: "price");
+//        obj.setObject(itemTitle.text!, forKey: "title");
+//        obj.setObject(itemDescription.text!, forKey: "description");
+//        if let user = PFUser.currentUser()
+//        {
+//            print("WOAH WATCHOUT WE GOT A USER OVER HERE")
+//            obj.setObject(user, forKey: "publisher")
+//        }
+//        print("Trying to upload DAta")
+//        obj.saveInBackgroundWithBlock({ (success, error) in
+//            if (error != nil)
+//            {
+//                print(error?.localizedDescription);
+//            }
+//            else
+//            {
+//                
+//                print("UPLOADED TO PARSE: ")
+//                print(self.itemData.title)
+//                print(self.itemData.description)
+//            }
+//        });
+//        //        let imageData = UIImagePNGRepresentation(itemData.image)
+//        //        var image = info[UIImagePickerControllerOriginalImage] as! UIImage
+//        var imgData: NSData = NSData(data: UIImageJPEGRepresentation((itemData.image), 1)!)
+//        // var imgData: NSData = UIImagePNGRepresentation(image)
+//        // you can also replace UIImageJPEGRepresentation with UIImagePNGRepresentation.
+//        var imageSize: Int = imgData.length
+//        print("size of image in KB: %f ", imageSize / 1024)
+//        let parseImageData = PFFile(name: "uploaded_image.png", data: imgData)
+//        obj["image"] = parseImageData
+//        obj.saveInBackgroundWithBlock(
+//            {
+//                (success: Bool, error: NSError?) -> Void in
+//                
+//                if error == nil
+//                {
+//                    //take user home
+//                    print("data uploaded")
+//                    
+//                }
+//                    
+//                else
+//                {
+//                    
+//                    print(error)
+//                }
+//        })
+//                    var update = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PhotoStreamViewController") as! PhotoStreamViewController
+//                    //set properties of login
+//                    self.presentViewController(update, animated: true, completion: nil)
+//    }
+
+        
     
     
     // MARK: - Table view data source
@@ -145,10 +209,22 @@ class PostingTableViewController: UITableViewController, UIPickerViewDataSource,
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "update"
         {
-        let obj = PFObject(className: "Book")
-        obj.setObject(itemData.price, forKey: "price");
-        obj.setObject(itemData.title, forKey: "title");
-        obj.setObject(itemData.description, forKey: "description");
+            print("SEGUE WAS CA::ED")
+            var obj = PFObject(className: "Classified")
+            if pickerView.selectedRowInComponent(1) == 0
+            {
+                print("This is identified as a book")
+                obj = PFObject(className: "Book")
+            }
+        obj.setObject(itemPrice.text!, forKey: "price");
+        obj.setObject(itemTitle.text!, forKey: "title");
+        obj.setObject(itemDescription.text!, forKey: "description");
+        if let user = PFUser.currentUser()
+        {
+            print("WOAH WATCHOUT WE GOT A USER OVER HERE")
+            obj.setObject(user, forKey: "publisher")
+        }
+        print("Trying to upload DAta")
         obj.saveInBackgroundWithBlock({ (success, error) in
             if (error != nil)
             {
@@ -156,7 +232,10 @@ class PostingTableViewController: UITableViewController, UIPickerViewDataSource,
             }
             else
             {
-                print("UPLOADED TO PARSE")
+                
+                print("UPLOADED TO PARSE: ")
+                print(self.itemData.title)
+                print(self.itemData.description)
             }
         });
 //        let imageData = UIImagePNGRepresentation(itemData.image)
@@ -186,6 +265,7 @@ class PostingTableViewController: UITableViewController, UIPickerViewDataSource,
             }
         })
         }
+
     }
 
 }

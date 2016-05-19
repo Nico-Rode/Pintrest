@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 
 
@@ -23,8 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         config.server = "https://therealwhittrade.azurewebsites.net/parse"
         });
     
+    
     return true
     }
+    
     
 }
 

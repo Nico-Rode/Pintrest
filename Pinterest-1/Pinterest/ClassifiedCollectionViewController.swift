@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Parse
 
 class ClassifiedCollectionViewController: UICollectionViewController {
     var Timeline:NSMutableArray = NSMutableArray()
@@ -21,7 +22,7 @@ class ClassifiedCollectionViewController: UICollectionViewController {
     
     func loadData()
     {
-        print("HELLO? LOAD DATA HERE MOTER FUCKER")
+        print("HELLO? LOAD DATA")
         Timeline.removeAllObjects()
         var findTimelineData:PFQuery = PFQuery(className: "Classified")
         findTimelineData.findObjectsInBackgroundWithBlock{ (results, error) in
@@ -43,6 +44,8 @@ class ClassifiedCollectionViewController: UICollectionViewController {
                         print("We have a description from the DataBase")
                         self.descriptionData = parseDescriptionData
                     }
+                    let Item:Book = Book(title: self.titleData, description: self.descriptionData, price: self.priceData, image: self.imageData)
+                    self.Timeline.addObject(Item)
                     if let parseImageData = object["image"] as? PFFile
                     {
                         print("Image is a pffile")
@@ -54,8 +57,9 @@ class ClassifiedCollectionViewController: UICollectionViewController {
                                 let parseImage = UIImage(data: ImageData!)!
                                 self.imageData = parseImage
                                 print("set the image data")
-                                let Item:Book = Book(title: self.titleData, description: self.descriptionData, price: self.priceData, image: self.imageData)
-                                self.Timeline.addObject(Item)
+                                print("THE IMAGE DATA IS AS FOLLOWS: ")
+                                print("TITLE: ", self.titleData)
+                                Item.setImage(self.imageData)
                                 print("Once image has been set there are ", self.Timeline.count, " images in the array")
                                 self.imageCounter += 1
                                 
@@ -63,6 +67,7 @@ class ClassifiedCollectionViewController: UICollectionViewController {
                                 {
                                     let Array:NSArray = self.Timeline.reverseObjectEnumerator().allObjects
                                     self.Timeline = NSMutableArray(array: Array)
+                                    print("When did this happen?")
                                     self.collectionView?.reloadData()
                                 }
                             }
@@ -102,7 +107,7 @@ class ClassifiedCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("PLEASE TELL ME THIS WAS CALLED")
+        print("PLEASE TELL ME classufied WAS CALLED")
         
         
         if let patternImage = UIImage(named: "Pattern") {
@@ -116,6 +121,7 @@ class ClassifiedCollectionViewController: UICollectionViewController {
         layout.cellPadding = 5
         layout.delegate = self
         layout.numberOfColumns = 2
+        self.loadData()
     }
     
     override func viewWillAppear(animated: Bool)
@@ -123,7 +129,7 @@ class ClassifiedCollectionViewController: UICollectionViewController {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBarHidden = true
         print("IS THIS FIRST?")
-        self.loadData()
+        self.collectionView?.reloadData()
     }
     
 }
@@ -138,9 +144,11 @@ extension ClassifiedCollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnnotatedPhotoCell", forIndexPath: indexPath) as! AnnotatedPhotoCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnnotatedPhotoCellz", forIndexPath: indexPath) as! AnnotatedPhotoCell
+        cell.viewPage = "Classified"
+        print("Cell for itemd at index path")
         
-        cell.photo = Timeline[indexPath.item] as? Book
+        cell.classified = Timeline[indexPath.item] as? Book
         return cell
     }
     

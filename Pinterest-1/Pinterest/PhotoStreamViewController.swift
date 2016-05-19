@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Parse
 
 class PhotoStreamViewController: UICollectionViewController {
     var Timeline:NSMutableArray = NSMutableArray()
@@ -21,7 +22,7 @@ class PhotoStreamViewController: UICollectionViewController {
     
     func loadData()
     {
-        print("HELLO? LOAD DATA HERE MOTER FUCKER")
+        print("HELLO? LOAD DATA HERE")
         Timeline.removeAllObjects()
         var findTimelineData:PFQuery = PFQuery(className: "Book")
         findTimelineData.findObjectsInBackgroundWithBlock{ (results, error) in
@@ -40,9 +41,11 @@ class PhotoStreamViewController: UICollectionViewController {
                     }
                     if let parseDescriptionData = object["description"] as? String
                     {
-                        print("We have a description from the DataBase")
+                        print("We have a description from the DataBase which is: ", parseDescriptionData)
                         self.descriptionData = parseDescriptionData
                     }
+                    let Item:Book = Book(title: self.titleData, description: self.descriptionData, price: self.priceData, image: self.imageData)
+                    self.Timeline.addObject(Item)
                     if let parseImageData = object["image"] as? PFFile
                     {
                         print("Image is a pffile")
@@ -54,8 +57,9 @@ class PhotoStreamViewController: UICollectionViewController {
                                 let parseImage = UIImage(data: ImageData!)!
                                 self.imageData = parseImage
                                 print("set the image data")
-                                let Item:Book = Book(title: self.titleData, description: self.descriptionData, price: self.priceData, image: self.imageData)
-                                self.Timeline.addObject(Item)
+                                print("THE IMAGE DATA IS AS FOLLOWS: ")
+                                print("TITLE: ", self.titleData)
+                                Item.setImage(self.imageData)
                                 print("Once image has been set there are ", self.Timeline.count, " images in the array")
                                 self.imageCounter += 1
                                 
@@ -103,7 +107,6 @@ class PhotoStreamViewController: UICollectionViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     print("PLEASE TELL ME THIS WAS CALLED")
-
     
     if let patternImage = UIImage(named: "Pattern") {
       view.backgroundColor = UIColor(patternImage: patternImage)
@@ -116,14 +119,18 @@ class PhotoStreamViewController: UICollectionViewController {
     layout.cellPadding = 5
     layout.delegate = self
     layout.numberOfColumns = 2
+    self.loadData()
     }
     
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBarHidden = true
-        print("IS THIS FIRST?")
-        self.loadData()
+//        if PFUser.currentUser() == nil {
+//            var login = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogInViewController") as! LogInViewController
+//            //set properties of login
+//            self.presentViewController(login, animated: true, completion: nil)
+//        }
     }
   
 }
@@ -139,7 +146,7 @@ extension PhotoStreamViewController {
   
   override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnnotatedPhotoCell", forIndexPath: indexPath) as! AnnotatedPhotoCell
-    
+    cell.viewPage = "Books"
     cell.photo = Timeline[indexPath.item] as? Book
     return cell
   }

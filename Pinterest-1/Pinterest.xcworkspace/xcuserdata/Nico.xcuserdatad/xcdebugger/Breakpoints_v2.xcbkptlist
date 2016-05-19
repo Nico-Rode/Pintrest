@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pinterest/UserPostsTableViewCell.swift"
+            timestampString = "484815122.158486"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "UserPostsTableViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pinterest.UserPostsTableViewCell.imagez.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIImageView&gt;"
+                  moduleName = "Pinterest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nico/Desktop/Joe/Pintrest/Pinterest-1/Pinterest/UserPostsTableViewCell.swift"
+                  timestampString = "484815122.414059"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pinterest.UserPostsTableViewCell.imagez.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIImageView&gt;"
+                  moduleName = "Pinterest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nico/Desktop/Joe/Pintrest/Pinterest-1/Pinterest/UserPostsTableViewCell.swift"
+                  timestampString = "484815122.414731"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pinterest.UserPostsTableViewCell.imagez.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIImageView&gt;"
+                  moduleName = "Pinterest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nico/Desktop/Joe/Pintrest/Pinterest-1/Pinterest/UserPostsTableViewCell.swift"
+                  timestampString = "484815122.41519"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pinterest.UserPostsTableViewCell.init (Pinterest.UserPostsTableViewCell.Type)(style : __C.UITableViewCellStyle, reuseIdentifier : Swift.Optional&lt;Swift.String&gt;) -&gt; Pinterest.UserPostsTableViewCell"
+                  moduleName = "Pinterest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nico/Desktop/Joe/Pintrest/Pinterest-1/Pinterest/UserPostsTableViewCell.swift"
+                  timestampString = "484815122.415635"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "70">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pinterest.UserPostsTableViewCell.init (Pinterest.UserPostsTableViewCell.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Pinterest.UserPostsTableViewCell&gt;"
+                  moduleName = "Pinterest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nico/Desktop/Joe/Pintrest/Pinterest-1/Pinterest/UserPostsTableViewCell.swift"
+                  timestampString = "484815122.41596"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

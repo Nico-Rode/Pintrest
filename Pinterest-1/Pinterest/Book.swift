@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class Book
 {
@@ -50,6 +51,11 @@ class Book
         self.title = title
         self.description = description
         self.price = price
+        self.image = image
+    }
+    
+    func setImage(image: UIImage)
+    {
         self.image = image
     }
     
