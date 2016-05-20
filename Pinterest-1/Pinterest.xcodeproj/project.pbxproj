@@ -30,6 +30,7 @@
 		030AF0AA1CEE9B1300266C5E /* Logo Whit Trade.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 030AF0A61CEE9B1300266C5E /* Logo Whit Trade.jpg */; };
 		030AF0AB1CEE9B1300266C5E /* MLK.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 030AF0A71CEE9B1300266C5E /* MLK.jpg */; };
 		030AF0AC1CEE9B1300266C5E /* Screen Shot 2016-05-10 at 5.34.52 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 030AF0A81CEE9B1300266C5E /* Screen Shot 2016-05-10 at 5.34.52 PM.png */; };
+		030AF0AE1CEE9C4100266C5E /* Default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 030AF0AD1CEE9C4100266C5E /* Default.jpg */; };
 		0311E7441CE580C800454535 /* UserPostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0311E7431CE580C800454535 /* UserPostsTableViewCell.swift */; };
 		0311E7461CE59C3900454535 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0311E7451CE59C3900454535 /* ImageCell.swift */; };
 		038373B71CE2B7CA005A519D /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038373B61CE2B7CA005A519D /* LogInViewController.swift */; };
@@ -48,7 +49,6 @@
 		039902201CD9805B00DF4B1B /* YourPostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0399021F1CD9805B00DF4B1B /* YourPostsTableViewController.swift */; };
 		039902221CDA758C00DF4B1B /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039902211CDA758C00DF4B1B /* CameraViewController.swift */; };
 		039902241CDAFA9B00DF4B1B /* ClassifiedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039902231CDAFA9B00DF4B1B /* ClassifiedCollectionViewController.swift */; };
-		039902301CDB226C00DF4B1B /* Default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0399022F1CDB226C00DF4B1B /* Default.jpg */; };
 		039902341CE1C2A300DF4B1B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039902331CE1C2A300DF4B1B /* SignUpViewController.swift */; };
 		03DE9E7A1CEE991700B32F56 /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03DE9E791CEE991600B32F56 /* Background.jpg */; };
 		43BB77415FC877AB7CB73ECC /* Pods_Pinterest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB01632582F32EFE8D1BE1C1 /* Pods_Pinterest.framework */; };
@@ -89,6 +89,7 @@
 		030AF0A61CEE9B1300266C5E /* Logo Whit Trade.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Logo Whit Trade.jpg"; path = "Images.xcassets/Logo Whit Trade.jpg"; sourceTree = "<group>"; };
 		030AF0A71CEE9B1300266C5E /* MLK.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = MLK.jpg; path = Images.xcassets/MLK.jpg; sourceTree = "<group>"; };
 		030AF0A81CEE9B1300266C5E /* Screen Shot 2016-05-10 at 5.34.52 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2016-05-10 at 5.34.52 PM.png"; path = "Images.xcassets/Screen Shot 2016-05-10 at 5.34.52 PM.png"; sourceTree = "<group>"; };
+		030AF0AD1CEE9C4100266C5E /* Default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Default.jpg; path = Images.xcassets/Default.jpg; sourceTree = "<group>"; };
 		0311E7431CE580C800454535 /* UserPostsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPostsTableViewCell.swift; sourceTree = "<group>"; };
 		0311E7451CE59C3900454535 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		038373B61CE2B7CA005A519D /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +109,6 @@
 		0399021F1CD9805B00DF4B1B /* YourPostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourPostsTableViewController.swift; sourceTree = "<group>"; };
 		039902211CDA758C00DF4B1B /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		039902231CDAFA9B00DF4B1B /* ClassifiedCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifiedCollectionViewController.swift; sourceTree = "<group>"; };
-		0399022F1CDB226C00DF4B1B /* Default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Default.jpg; path = ../../../../../Documents/Scripts/TableView/TableView/Default.jpg; sourceTree = "<group>"; };
 		039902331CE1C2A300DF4B1B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		03DE9E791CEE991600B32F56 /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Background.jpg; path = Images.xcassets/Background.jpg; sourceTree = "<group>"; };
 		2B1D99903635E750A36327D4 /* Pods-Pinterest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinterest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pinterest/Pods-Pinterest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,9 +161,9 @@
 				03DE9E791CEE991600B32F56 /* Background.jpg */,
 				030AF0A51CEE9B1300266C5E /* Books.jpg */,
 				030AF0A61CEE9B1300266C5E /* Logo Whit Trade.jpg */,
+				030AF0AD1CEE9C4100266C5E /* Default.jpg */,
 				030AF0A71CEE9B1300266C5E /* MLK.jpg */,
 				030AF0A81CEE9B1300266C5E /* Screen Shot 2016-05-10 at 5.34.52 PM.png */,
-				0399022F1CDB226C00DF4B1B /* Default.jpg */,
 			);
 			name = TestPics;
 			sourceTree = "<group>";
@@ -399,13 +399,13 @@
 				030AF0A91CEE9B1300266C5E /* Books.jpg in Resources */,
 				030AF0AC1CEE9B1300266C5E /* Screen Shot 2016-05-10 at 5.34.52 PM.png in Resources */,
 				03DE9E7A1CEE991700B32F56 /* Background.jpg in Resources */,
-				039902301CDB226C00DF4B1B /* Default.jpg in Resources */,
 				030AF0AB1CEE9B1300266C5E /* MLK.jpg in Resources */,
 				7B0AC7C11AAEF90000885D4A /* Main.storyboard in Resources */,
 				7B0AC7F21AAEFD0400885D4A /* Images.xcassets in Resources */,
 				038373CA1CE39936005A519D /* Info.plist in Resources */,
 				7B0AC7C61AAEF90000885D4A /* LaunchScreen.xib in Resources */,
 				030AF0AA1CEE9B1300266C5E /* Logo Whit Trade.jpg in Resources */,
+				030AF0AE1CEE9C4100266C5E /* Default.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
