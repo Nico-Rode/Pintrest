@@ -202,6 +202,7 @@
 		7B0AC7B81AAEF90000885D4A /* Pinterest */ = {
 			isa = PBXGroup;
 			children = (
+				7B0AC7BA1AAEF90000885D4A /* Info.plist */,
 				030079A71CCEA84200E96BC3 /* Pinterest_Bridging_Header.h */,
 				7B0AC7DB1AAEF99600885D4A /* Assets */,
 				7B0AC7DC1AAEF9A500885D4A /* Controllers */,
@@ -219,7 +220,6 @@
 		7B0AC7B91AAEF90000885D4A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7B0AC7BA1AAEF90000885D4A /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
